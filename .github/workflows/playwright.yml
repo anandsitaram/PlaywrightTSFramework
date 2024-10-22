@@ -35,10 +35,10 @@ jobs:
     steps:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: List test files
-      run: ls tests  # Adjust if your tests are in a different directory
+    - name: List all files and directories
+      run: ls -R  # List all files and directories to check the structure
     - name: Run Playwright tests
-      run: npx playwright test tests --grep='@${{ github.event.inputs.run_tests }}'
+      run: npx playwright test tests --grep='@${{ github.event.inputs.run_tests }}'  # Adjust this if needed
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
