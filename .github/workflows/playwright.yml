@@ -37,6 +37,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: xvfb-run npx playwright test --grep @${{ github.event.inputs.run_tests }}
+      run: npx playwright test --grep=@${{ github.event.inputs.run_tests }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
