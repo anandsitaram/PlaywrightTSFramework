@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: lts/*  # Adjust if needed
     - name: Install dependencies
       run: npm ci
 
@@ -30,13 +30,17 @@ jobs:
     needs: compile  # Ensure compile job is completed before this runs
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_tests != ''  # Only run tests if input is provided
-    env:  # Set environment variables for the test job
+    env:
       MY_ENV_VAR: ${{ github.event.inputs.env_variable }}  # Set your environment variable
     steps:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: List all files
+      run: ls -R  # List all files and directories
+    - name: List test files
+      run: find . -name '*.spec.js' -o -name '*.test.js' -o -name '*.spec.ts' -o -name '*.test.ts'  # Check for test files
     - name: Run Playwright tests
-      run: npx playwright test --grep='@${{ github.event.inputs.run_tests }}'
+      run: npx playwright test --grep '@${{ github.event.inputs.run_tests }}' --reporter=list
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
