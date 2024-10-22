@@ -46,7 +46,7 @@ jobs:
 
     - name: Run UI Tests
       if: contains(github.event.inputs.run_tests, 'ui')  # Check if 'ui' is included in the input
-      run: npx playwright test --grep=@ui
+      run: npx playwright test --grep "ui"
 
     - name: Run Smoke Tests
       if: contains(github.event.inputs.run_tests, 'smoke')  # Check if 'smoke' is included in the input
