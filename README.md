@@ -30,11 +30,11 @@ This is an automation framework designed for testing a sample e-commerce applica
 ├── utils               # Utility functions and helpers.
 ├── testdata            # JSON files containing test data.
 ├── tests               # Test scripts utilizing the page objects and fixtures.
-│   ├── ally.spec.js            # Contains tests related to accessibility.
-│   ├── e2e-fixtures.spec.js     # Contains end-to-end tests using fixtures.
-│   └── e2e-pages.spec.js        # Contains end-to-end tests using page managers.
+│   ├── ally.spec.ts            # Contains tests related to accessibility.
+│   ├── e2e-fixtures.spec.ts     # Contains end-to-end tests using fixtures.
+│   └── e2e-pages.spec.ts        # Contains end-to-end tests using page managers.
 ├── .env                # Environment variables configuration.
-└── playwright.config.js # Configuration file for Playwright.
+└── playwright.config.ts # Configuration file for Playwright.
 
 ```
 ## Setup and Installation
