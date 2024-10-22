@@ -1,57 +1,21 @@
-name: Playwright Tests
+name: Run Test without Docker
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-  workflow_dispatch: 
-    inputs:
-      run_tests:
-        description: 'Run tests (provide comma-separated tags to run specific tests, e.g., api, web, ui, smoke)'
-        required: false
-        default: ''  # Default value can be empty
-      env_variable:
-        description: 'Environment variable value'
-        required: false
-        default: 'qa'  # Set a default value for the environment variable
-
+  workflow_dispatch:
 jobs:
-  compile:
+  run_web:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: 20
     - name: Install dependencies
       run: npm ci
-
-  test:
-    needs: compile  # Ensure compile job is completed before this runs
-    runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_tests != ''  # Only run tests if input is provided
-    env:  # Set environment variables for the test job
-      MY_ENV_VAR: ${{ github.event.inputs.env_variable }}  # Set your environment variable
-    steps:
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-
-    - name: Run API Tests
-      if: contains(github.event.inputs.run_tests, 'api')  # Check if 'api' is included in the input
-      run: npx playwright test --grep='@api'
-
-    - name: Run Web Tests
-      if: contains(github.event.inputs.run_tests, 'web')  # Check if 'web' is included in the input
-      run: npx playwright test --grep='@web'
-
-    - name: Run UI Tests
-      if: contains(github.event.inputs.run_tests, 'ui')  # Check if 'ui' is included in the input
-      run: npx playwright test --grep "ui"
-
-    - name: Run Smoke Tests
-      if: contains(github.event.inputs.run_tests, 'smoke')  # Check if 'smoke' is included in the input
-      run: npx playwright test --grep='@smoke'
-
+      run: npx playwright install chrome
+    - name: Run Playwright tests
+      run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
