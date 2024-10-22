@@ -1,10 +1,10 @@
-class DateUtils {
+export class DateUtils {
 
     /**
      * Gets the current date in the format DDMMYYHHSS (Day, Month, Year, Hours, Seconds).
      * @returns {string} The current date and time as a formatted string.
      */
-    static getCurrentDate() {
+    static getCurrentDate():string {
         const currentDate = new Date();
         const day = String(currentDate.getDate()).padStart(2, '0');
         const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
@@ -17,4 +17,3 @@ class DateUtils {
 
 }
 
-module.exports = DateUtils;

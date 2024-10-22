@@ -11,7 +11,21 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+import config from 'dotenv';
+
+const env = process.env.env || 'qa';
+const envFilePath=`./.env/.env.${env}`;
+config.config({
+  path:envFilePath,
+  override:true
+})
+
 export default defineConfig({
+  expect:{
+    timeout:10000
+  },
+  timeout:300000,
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -30,6 +44,8 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    actionTimeout:60000,
+    navigationTimeout:60000
   },
 
   /* Configure projects for major browsers */

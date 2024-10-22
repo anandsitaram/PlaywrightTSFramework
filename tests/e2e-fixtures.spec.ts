@@ -1,11 +1,11 @@
 import { test, expect } from '../src/fixtures/Web-Fixtures'
 
-const DateUtils = require('../utils/DateUtils')
-const RandomUtils = require('../utils/RandomUtils');
+import {DateUtils} from '@utils/DateUtils'
+import {RandomUtils} from '@utils/RandomUtils'
 const testData=JSON.parse(JSON.stringify(require('../testdata/data.json')))
 
 
-test("New User", {tags :['@newUser','@P1','@automated','@ui','@fixtures']},async ({ homePage,productListPage,productDetailPage,checkoutPage,reviewPage,orderSuccessPage}) => {
+test("New User", { tag :['@newUser','@P1','@automated','@ui','@fixtures']},async ({ homePage,productListPage,productDetailPage,checkoutPage,reviewPage,orderSuccessPage}) => {
     const product = testData.product
     const qty = testData.qty
     await homePage.launchApplication()
@@ -49,8 +49,8 @@ test("New User", {tags :['@newUser','@P1','@automated','@ui','@fixtures']},async
     await reviewPage.waitForPageToLoad();
 
     // Using expect(locator).toHaveText(expected)
-    await expect(reviewPage.qtyTxt).toHaveText(qty);
-    await expect(reviewPage.productNameTxt).toHaveText(product);
+    await expect(await reviewPage.getQuantity()).toHaveText(qty);
+    await expect(await reviewPage.getProductName()).toHaveText(product);
     
     await reviewPage.clickOnPlaceOrderBtn();
 

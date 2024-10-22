@@ -1,14 +1,14 @@
 import { test, expect } from "@playwright/test";
 
-const DateUtils = require('../utils/DateUtils')
-const RandomUtils = require('../utils/RandomUtils');
-const { PageManager } = require('../src/web/pagemanagers/PageManager');
+import {DateUtils} from '@utils/DateUtils'
+import {RandomUtils} from '@utils/RandomUtils'
+import { PageManager } from '../src/web/pagemanagers/PageManager';
 const testData=JSON.parse(JSON.stringify(require('../testdata/data.json')))
 
 
-test("New User", {tags :['@newUser','@P1','@automated','@ui','@pageManager']},async ({ browser }) => {
-    const product = testData.product
-    const qty = testData.qty
+test("New User", {tag :['@newUser','@P1','@automated','@ui','@pageManager']},async ({ browser }) => {
+    const product :string= testData.product
+    const qty :string = testData.qty
     console.log(process.env.url)
     console.log(testData.size)
     console.log(testData.color)
@@ -62,8 +62,9 @@ test("New User", {tags :['@newUser','@P1','@automated','@ui','@pageManager']},as
     await reviewPage.waitForPageToLoad();
 
     // Using expect(locator).toHaveText(expected)
-    await expect(reviewPage.qtyTxt).toHaveText(qty);
-    await expect(reviewPage.productNameTxt).toHaveText(product);
+    await expect(await reviewPage.getQuantity()).toHaveText(qty);
+    await expect(await reviewPage.getProductName()).toHaveText(product);
+    
     
     await reviewPage.clickOnPlaceOrderBtn();
 

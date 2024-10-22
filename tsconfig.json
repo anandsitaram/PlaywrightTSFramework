@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@fixtures/*": ["src/fixtures/*"],
+        "@pages/*": ["src/web/pageobjects/*"],
+        "@utils/*": ["utils/*"],
+        "@testdata/*": ["testdata/*"]
+      },
+      "esModuleInterop": true
+    }
+
+  }
+  

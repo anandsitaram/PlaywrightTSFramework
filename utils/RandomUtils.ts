@@ -1,11 +1,11 @@
-class RandomUtils {
+export class RandomUtils {
 
     /**
      * Generates a random alphanumeric string (containing letters and numbers) of the given length.
      * @param {number} length - The desired length of the generated string.
      * @returns {string} A random alphanumeric string of the specified length.
      */
-    static getRandomAlphaNumericString(length) {
+    static getRandomAlphaNumericString(length:number) {
         let result = '';
         while (result.length < length) {
             result += Math.random().toString(36).slice(2);
@@ -18,7 +18,7 @@ class RandomUtils {
      * @param {number} length - The desired length of the generated string.
      * @returns {string} A random camelCase string of the specified length.
      */
-    static getRandomCamelCaseString(length) {
+    static getRandomCamelCaseString(length:number) {
         if (length <= 0) {
             return '';
         }
@@ -35,7 +35,7 @@ class RandomUtils {
      * @param {number} length - The desired length of the generated string.
      * @returns {string} A random lowercase alphabetic string of the specified length.
      */
-    static getRandomLowerCaseString(length) {
+    static getRandomLowerCaseString(length:number) {
         if (length <= 0) {
             return '';
         }
@@ -52,7 +52,7 @@ class RandomUtils {
      * @param {number} length - The desired length of the generated number.
      * @returns {number} A random numeric value of the specified length.
      */
-      static getRandomNumber(length) {
+      static getRandomNumber(length:number) {
         let result = '';
         while (result.length < length) {
             result += Math.floor(Math.random() * 10).toString();
@@ -61,5 +61,3 @@ class RandomUtils {
     }
 
 }
-
-module.exports = RandomUtils;

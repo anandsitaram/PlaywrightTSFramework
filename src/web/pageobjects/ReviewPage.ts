@@ -27,7 +27,7 @@ export class ReviewPage extends BasePage {
      * @returns {Promise<string>} The quantity as a string.
      */
     async getQuantity() {
-        return await this.qtyTxt.textContent();
+        return  this.qtyTxt;
     }
 
     /**
@@ -35,7 +35,7 @@ export class ReviewPage extends BasePage {
      * @returns {Promise<string>} The product name as a string.
      */
     async getProductName() {
-        return await this.productNameTxt.textContent();
+        return  this.productNameTxt;
     }
 
     /**
