@@ -10,6 +10,10 @@ on:
         description: 'Run tests (provide tag to run tests)'
         required: false
         default: ''  # Default value can be empty, can also set a default tag
+      env_variable:
+        description: 'Environment variable value'
+        required: false
+        default: 'default_value'  # Set a default value for the environment variable
 
 jobs:
   compile:
@@ -26,14 +30,16 @@ jobs:
     needs: compile  # Ensure compile job is completed before this runs
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_tests != ''  # Only run tests if input is provided
+    env:  # Set environment variables for the test job
+      MY_ENV_VAR: ${{ github.event.inputs.env_variable }}  # Set your environment variable
     steps:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test -g '@${{ github.event.inputs.run_tests }}'
+      run: npx playwright test --grep='@${{ github.event.inputs.run_tests }}'
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
         path: playwright-report/
-        retention-days: 7  
+        retention-days: 7
