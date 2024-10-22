@@ -9,17 +9,6 @@ This is an automation framework designed for testing an sample e-commerce applic
 - **DotEnv**: Handling multiple environment
 - **Typescript**: Strongly-typed JavaScript for improved development and debugging.
 
-## Folder Structure
-
-# Playwright Automation Framework Using JavaScript
-
-## Overview
-This is an automation framework designed for testing a sample e-commerce application developed using Magento using Playwright. The framework follows the Page Object Model (POM) design pattern to enhance code reusability and maintainability.
-
-## Technologies Used
-- **Node.js**: JavaScript runtime environment.
-- **Playwright**: Automation library for browser testing.
-- **DotEnv**: For handling multiple environments.
 
 ## Folder Structure
 ```plaintext
