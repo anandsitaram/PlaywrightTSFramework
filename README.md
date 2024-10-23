@@ -29,20 +29,13 @@ This automation framework is designed to test a sample e-commerce platform built
 ```
 ## Setup and Installation
 
-1. Install dependencies:
+***1. Install dependencies:***
  ```bash
 npm install
 ```
-2. Tests:
-```bash
-* ally.spec.ts            - Contains tests related to accessbility
-* e2e-fixtures.spec.ts    - Contains end to end tests using fixtures
-* e2e-pages.spec.ts       - Contains end to end tests using page objects
-```
 
-3. Framework Explanation:
+**2. Framework Explanation:**
    
-```
   Page Object Model (POM):
   The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and 
    readability.
@@ -71,9 +64,9 @@ npm install
 
   TypeScript Configuration:
   The tsconfig.json file defines the TypeScript compiler options, ensuring the code is type-checked and compiled correctly for better development and debugging.
-```
 
-4. Running Tests:
+
+**3. Running Tests:**
  ```bash
 * Headless mode -
 npx playwright test
