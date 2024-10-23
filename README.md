@@ -4,21 +4,21 @@
 This automation framework is designed to test a sample e-commerce platform built on Magento using Playwright. It follows the Page Object Model (POM) design pattern and utilizes Playwright fixtures to ensure code maintainability and reusability. The framework was developed and tests were executed using the application hosted at https://magento.softwaretestingboard.com/, which is built on a Magento backend. Additionally, the framework includes sample tests showcasing Playwright's accessibility testing features.
 
 ## Technologies Used
-- Node.js: JavaScript runtime environment.
-- Playwright: Automation library for browser testing.
-- DotEnv: For managing environment
-- Typescript: Provides static typing for improved code quality and easier debugging
+- **Node.js**: JavaScript runtime environment.
+- **Playwright**: Automation library for browser testing.
+- **DotEnv**: For managing environment
+- **Typescript**: Provides static typing for improved code quality and easier debugging
 
 
 ## Folder Structure
 ```plaintext
 .
 ├── src
-│   ├── fixtures        # Contains Playwright fixtures for test setup.
-│   ├── pageobjects     # Contains page object classes for the application.
-├── utils               # Utility functions and helpers.
-├── testdata            # JSON files containing test data.
-├── tests               # Test scripts utilizing the page objects and fixtures.
+│   ├── fixtures                 # Contains Playwright fixtures for test setup.
+│   ├── pageobjects              # Contains page object classes for the application.
+├── utils                        # Utility functions and helpers.
+├── testdata                     # JSON files containing test data.
+├── tests                        # Test scripts utilizing the page objects and fixtures.
 │   ├── ally.spec.ts             # Contains tests related to accessibility.
 │   ├── e2e-fixtures.spec.ts     # Contains end-to-end tests using fixtures.
 │   └── e2e-pages.spec.ts        # Contains end-to-end tests using page objects.
