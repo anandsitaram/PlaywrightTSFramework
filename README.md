@@ -56,11 +56,11 @@ The utils folder contains helper functions for tasks like generating random test
 
 **Tests:**
 The tests folder includes various test scripts, such as:
-
+ ```bash
 * accessibility.spec.ts: Accessibility tests for compliance with web standards.
 * e2e-fixtures.spec.ts: End-to-end tests using fixtures.
 * e2e-pages.spec.ts: End-to-end tests utilizing the Page Object Model for user flows.
-
+ ```
 **Environment Configuration:**
 The .env file manages different environment configurations, allowing easy switching without altering the core test logic.
 
