@@ -4,10 +4,10 @@
 This automation framework is designed to test a sample e-commerce platform built on Magento using Playwright. It follows the Page Object Model (POM) design pattern and utilizes Playwright fixtures to ensure code maintainability and reusability. The framework was developed and tests were executed using the application hosted at https://magento.softwaretestingboard.com/, which is built on a Magento backend. Additionally, the framework includes sample tests showcasing Playwright's accessibility testing features.
 
 ## Technologies Used
-- **Node.js**: JavaScript runtime environment.
-- **Playwright**: Automation library for browser testing.
-- **DotEnv**: For managing environment
-- **Typescript**: Provides static typing for improved code quality and easier debugging
+- Node.js: JavaScript runtime environment.
+- Playwright: Automation library for browser testing.
+- DotEnv: For managing environment
+- Typescript: Provides static typing for improved code quality and easier debugging
 
 
 ## Folder Structure
@@ -29,20 +29,20 @@ This automation framework is designed to test a sample e-commerce platform built
 ```
 ## Setup and Installation
 
-1. **Install dependencies**:
+1. Install dependencies:
  ```bash
 npm install
 ```
-2. **Tests**:
+2. Tests:
 ```bash
 * ally.spec.ts            - Contains tests related to accessbility
 * e2e-fixtures.spec.ts    - Contains end to end tests using fixtures
 * e2e-pages.spec.ts       - Contains end to end tests using page objects
 ```
 
-3. **Framework Explanation**:
+3. Framework Explanation:
    
-```bash
+```
   Page Object Model (POM):
   The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and 
    readability.
@@ -61,7 +61,7 @@ npm install
   
   * accessibility.spec.ts: Accessibility tests for compliance with web standards.
   * e2e-fixtures.spec.ts: End-to-end tests using fixtures.
-  * e2e-pages.spec.ts: End-to-end tests utilizing the Page Object Model for user flows.
+  * e2e-pages.spec.ts: End-to-end tests utilizing the Page Object Model.
 
   Environment Configuration:
   The .env file manages different environment configurations, allowing easy switching without altering the core test logic.
@@ -73,34 +73,34 @@ npm install
   The tsconfig.json file defines the TypeScript compiler options, ensuring the code is type-checked and compiled correctly for better development and debugging.
 ```
 
-4. **Running Tests**:
+4. Running Tests:
  ```bash
 * Headless mode -
-**npx playwright test**
+npx playwright test
 
 * Head mode - 
-**npx playwright test --headed**
+npx playwright test --headed
 
 * To run specific browser
-**npx playwright test --project=chrome** 
+npx playwright test --project=chrome 
 
 * To run specific spec file
-**npx playwright test example.spec.ts**  
+npx playwright test example.spec.ts  
 
 * To run specific test
-**npx playwright test -g 'has title'**
+npx playwright test -g 'has title'
 
 * To run in UI mode
-  **npx playwright test --ui**
+  npx playwright test --ui
 
 * To Run in trace on
-  **npx playwright test --project=chromium --trace on**
+  npx playwright test --project=chromium --trace on
 
 * To Run in debug mode
-  **npx playwright test --project=chromium --debug**
+  npx playwright test --project=chromium --debug
 
 * To open last HTML report run:
-**npx playwright show-report**
+npx playwright show-report
 ```
 
 
