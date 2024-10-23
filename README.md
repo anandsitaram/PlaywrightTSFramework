@@ -42,7 +42,7 @@ npm install
 
 3. **Framework Explanation**:
    
-```bash
+```
   Page Object Model (POM):
   The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and 
    readability.
