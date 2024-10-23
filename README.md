@@ -41,35 +41,38 @@ npm install
 ```
 
 3. **Framework Explanation**:
-```plaintext
-  **Page Object Model (POM):**
-  The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and readability.
+   
+```bash
+  Page Object Model (POM):
+  The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and 
+   readability.
 
-  **Playwright Fixtures:**
+  Playwright Fixtures:
   Custom fixtures are utilized for setting up preconditions (e.g., logging in) and cleaning up after tests. This ensures consistent setup and teardown across multiple test cases.
 
-  **Test Data Handling:**
+  Test Data Handling:
   Test data is stored in JSON files under the testdata directory, allowing for easy modification and reuse across different test cases, supporting data-driven testing.
 
-  **Utilities and Helpers:**
+  Utilities and Helpers:
   The utils folder contains helper functions for tasks like generating random test data and managing environment configurations, promoting code reusability.
 
-  **Tests:**
+  Tests:
   The tests folder includes various test scripts, such as:
   
   * accessibility.spec.ts: Accessibility tests for compliance with web standards.
   * e2e-fixtures.spec.ts: End-to-end tests using fixtures.
   * e2e-pages.spec.ts: End-to-end tests utilizing the Page Object Model for user flows.
 
-  **Environment Configuration:**
+  Environment Configuration:
   The .env file manages different environment configurations, allowing easy switching without altering the core test logic.
 
-  **Playwright Configuration:**
+  Playwright Configuration:
   The playwright.config.ts file sets up Playwright settings such as browser types and timeouts, enabling flexible test execution across different environments.
 
-  <strong> TypeScript Configuration:</strong>
+  TypeScript Configuration:
   The tsconfig.json file defines the TypeScript compiler options, ensuring the code is type-checked and compiled correctly for better development and debugging.
 ```
+
 4. **Running Tests**:
  ```bash
 * Headless mode -
