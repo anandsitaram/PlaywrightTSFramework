@@ -40,7 +40,7 @@ npm install
 * e2e-pages.spec.ts       - Contains end to end tests using page objects
 ```
 
-3.** **Framework Explanation****:
+3.**Framework Explanation***:
 
 **Page Object Model (POM):**
 The framework uses the Page Object Model design pattern, where each page of the application is represented as a separate class. This encapsulates all actions related to that page, enhancing code maintainability and readability.
