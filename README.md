@@ -41,10 +41,10 @@ npm install
    readability.
 
 **Playwright Fixtures:**
-  Custom fixtures are utilized for setting up preconditions (e.g., logging in) and cleaning up after tests. This ensures consistent setup and teardown across multiple test cases.
+  Fixtures are utilized exclusively for creating page objects. This streamlines the instantiation and management of page objects, ensuring consistency across tests.
 
 **Test Data Handling:**
-  Test data is stored in JSON files under the testdata directory, allowing for easy modification and reuse across different test cases, supporting data-driven testing.
+  Test data is stored in JSON files under the testdata directory, allowing for easy modification and reuse across different test cases.
 
 **Utilities and Helpers:**
   The utils folder contains helper functions for tasks like generating random test data and managing environment configurations, promoting code reusability.
